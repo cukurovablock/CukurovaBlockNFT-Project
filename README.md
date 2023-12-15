@@ -5,9 +5,9 @@
 This project utilizes [Tailwind CSS](https://tailwindcss.com/) for styling and is organized into the following directory structure:
 
 - `/src/components`: Contains React components used throughout the application.
-- `/src/App`: Houses the main application logic and components.
-- `/src/common`: Holds common/shared components, utilities, or styles.
-- `/src/pages`: Includes React components specific to individual pages of the application.
+- `/src/components/App`: Houses the main application logic and components.
+- `/src/components/common`: Holds common/shared components, utilities, or styles Atomic design principle.
+- `/src/components/pages`: Includes React components specific to individual pages of the application.
 
 ## Getting Started
 
