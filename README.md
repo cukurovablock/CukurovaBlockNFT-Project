@@ -17,3 +17,9 @@ This project utilizes [Tailwind CSS](https://tailwindcss.com/) for styling and i
    git clone
    cd
    ```
+
+2. **Update env. variables:**
+
+### REACT_APP_WALLET_CONNECT_PROJECT_ID
+
+#### Get it from walletconnect

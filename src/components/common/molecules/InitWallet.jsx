@@ -2,12 +2,10 @@ import {
   createWeb3Modal,
   defaultConfig,
   useWeb3Modal,
-  useWeb3ModalAccount,
 } from "@web3modal/ethers5/react";
 import GradientButton from "../../common/atoms/GradientButton";
 
 // 1. Get projectId
-const projectId = "YOUR_PROJECT_ID";
 
 // 2. Set chains
 const mainnet = {
@@ -31,7 +29,7 @@ const metadata = {
 createWeb3Modal({
   ethersConfig: defaultConfig({ metadata }),
   chains: [mainnet],
-  projectId,
+  projectId: process.env.REACT_APP_WALLET_CONNECT_PROJECT_ID,
 });
 
 export default function InitWallet() {
