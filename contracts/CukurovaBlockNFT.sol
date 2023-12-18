@@ -7,6 +7,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract CukurovaBlockNFT is ERC721, ERC721Burnable, Ownable {
     uint256 private _nextTokenId;
+    uint256 public constant maxTokenPerWallet = 20;
+
 
     constructor()
         ERC721("CukurovaBlockNFT", "CUBLOCK")
@@ -18,7 +20,16 @@ contract CukurovaBlockNFT is ERC721, ERC721Burnable, Ownable {
     }
 
     function safeMint(address to) public onlyOwner {
+        require(balanceOf(to) < maxTokenPerWallet, "Sahip olunabilecek token sinirina ulasildi.");
         uint256 tokenId = _nextTokenId++;
         _safeMint(to, tokenId);
+    }
+
+    function transfer(address to, uint256 amount) public {
+        require(
+            balanceOf(to) < maxTokenPerWallet,
+            "Alicinin cuzdaninda token sinirina ulasildi."
+        );
+        transferFrom(msg.sender, to, amount);
     }
 }
